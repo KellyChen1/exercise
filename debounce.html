@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /* 
+    空闲控制 返回函数连续调用时，空闲时间必须大于或等于 idle，action 才会执行
+    */
+    window.addEventListener("mousemove", function (e) {
+      mouseMove(e)
+    })
+    function  mouseMove(e) {
+      e=e || window.event;
+      console.log(e,"e")
+    }
+  
+  </script>
+</body>
+
+</html>
