@@ -1,0 +1,82 @@
+<div class="log">
+  操作记录
+</div>
+<div class="list">
+<ul>
+  <li>
+    <span class="seq">1</span>
+    <div class="content">lalal
+
+        <div class="">lalal</div> <div class="">lalal</div>
+
+    </div>
+ 
+  </li>
+  <li>
+      <span class="seq">2</span>
+      <div class="content">lalal
+
+          <div class="">lalal</div> <div class="">lalal</div>
+  
+      </div>
+    </li>
+  <li></li>
+
+</ul>
+</div>
+
+<div class="whole">
+<div class="square">1</div>
+<div class="square"></div>
+<div class="square"></div>
+<div class="square"></div>
+</div>
+<style>
+  .whole{
+    display: flex;
+
+  }
+  .square{
+    width: 50px;
+    height: 50px;
+    border:1px solid rebeccapurple;
+  }
+  html,body,ul, li{
+    margin:0;
+    padding:0;
+  }
+  .log{
+    padding: 10px 20px;
+    border-bottom: grey solid 1px;
+}
+  .list{
+    margin:0 20px;
+    border-left:1px solid grey;
+  }
+  ul{
+    list-style-type: none;
+    
+  }
+  li{
+    border-left: 1px grey solid;
+    position: relative;
+
+  }
+  li .content{
+    padding-left:30px;
+    padding-top:20px
+  }
+  .seq{
+    width: 30px;
+    height: 30px;
+    box-sizing:border-box;
+    border:1px solid skyblue;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    left:-15px;
+    border-radius: 50%;
+    top:15px;
+  }
+</style>

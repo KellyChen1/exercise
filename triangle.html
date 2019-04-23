@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 0;
+      height: 0;
+      border-width: 0px 30px 30px;
+      border-style: solid;
+      border-color: pink blue green #333;
+    }
+  
+  </style>
+</head>
+
+<body>
+  
+  <div class="small">hello</div>
+  <div class="box"></div>
+  <div id="parent">
+    <p id="child">foo bar</p>
+  </div>
+  <script>
+      function addElement() {
+        /**
+        |--------------------------------------------------
+        | createElement添加元素
+          createTextNode添加文本
+          appendChild 增加子元素
+        |--------------------------------------------------
+        */
+        // var newP = document.createElement("p")
+        // var newContent = document.createTextNode("hi P")
+        // newP.appendChild(newContent)
+        // document.body.appendChild(newP)
+        /**
+        |--------------------------------------------------
+        | parent.insertBefore(newNode, child)
+          child.parentNode
+          previousSibling
+          nextSibling
+          firstChild
+          lastChild
+          replaceChild
+          parent.removeChild
+        |--------------------------------------------------
+        */
+        // var parent = document.getElementById("parent")
+        // var child2 = document.getElementById("child")
+        // var newNode = document.createElement("div")
+        // parent.insertBefore(newNode, child2)
+        // parent.insertBefore(newNode, child2.nextSibling)
+        // console.log(child2.nextSibling.nextSibling.insertBefore)
+        // document.body.innerHTML="hi"
+        // document.write("hello")
+      }
+      // addElement()
+    </script>
+</body>
+
+</html>
