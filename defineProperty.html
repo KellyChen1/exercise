@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="button">button</div>
+  <div id="container">0</div>
+
+  <script>
+    // var obj = { value: 1 }
+    // var value = 1 //cope of obj.value
+    /**
+    |--------------------------------------------------
+    | example 1
+    |--------------------------------------------------
+    */
+    // document.getElementById("button").addEventListener("click", function () {
+    //   var container = document.getElementById("container")
+    //   container.innerHTML = Number(container.innerHTML) + 1
+    // })
+    /**
+    |--------------------------------------------------
+    | example 2
+    |--------------------------------------------------
+    */
+    // Object.defineProperty(obj, "value", {
+    //   get: function () {
+    //     return value
+    //   },
+    //   set: function (newValue) {
+    //     value = newValue;
+    //     document.getElementById("container").innerHTML = newValue
+    //   }
+    // })
+    // document.getElementById("button").addEventListener("click", function () {
+    //   obj.value = obj.value + 1;
+    // })
+    /**
+    |--------------------------------------------------
+    | example 3
+    |--------------------------------------------------
+    */
+    (function () {
+      var root = this;
+      console.log(root, "root")
+      function watch(obj, name, func) {
+        var value = obj[name];
+        Object.defineProperty(obj, name, {
+          get: function () {
+            return value;
+          },
+          set: function (newValue) {
+            value = newValue;
+            func(value)
+          }
+        })
+
+        if (value) obj[name] = value
+      }
+      this.watch = watch;
+    })()
+    var obj = { num: 0 }
+    watch(obj, "num", function (newValue) {
+      document.getElementById("container").innerHTML = newValue
+    })
+    document.getElementById("button").addEventListener("click", function () {
+      obj.num += 1
+    })
+    console.log(this);
+  </script>
+</body>
+
+</html>
